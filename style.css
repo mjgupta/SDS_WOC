@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css?family=Amatic+SC:400,700|Raleway|PT+Sans');
+body{
+	background-image:url("back.jpg");
+	background-repeat: repeat-x;;
+	opacity: 
+}
+div.logo_bar{
+	padding-left: 2%;
+	padding-top: 2%;
+	display: inline-block;
+	background-attachment: fixed;
+}
+.logo_bar img{
+	margin: 1px;
+}
+div.WOC
+{	display: inline-block;
+	font-family: 'Raleway' ,sans-serif;
+	font-size: 42px;
+	vertical-align: center;
+	padding-bottom: 5px;
+}
+div.title{
+	font-family: 'Amatic SC', cursive;
+	display: inline-block;
+	margin-left: 20%;
+	margin-right: 20%;
+	font-size: 56px;
+
+}
+div.end_bar{position: fixed;top:10px;
+	display: inline-block;
+
+}
+.end_bar a
+{
+	float: right;
+	padding-bottom:18px;
+	padding-top:10px;
+	padding-left: 15px;padding-right: 15px;
+	text-decoration: none;
+	text-align: center;
+	
+}
+.end_bar a:link{
+	text-decoration: none;
+	color: white;
+}
+.end_bar a:hover{
+	text-decoration: none;
+	color: white;
+	background-color: rgba(0,0,0,0.5);
+}
+div.main{
+	display: block;
+	margin:15% 5% 0% 5%;
+}
+.main h1{
+	margin:0% 15% 0% 20%;
+	font-family: 'arial';
+	color: black;
+	font-size: auto;	/**/
+}
+.text_over_bar{
+	font-family: 'arial',monospace;
+}
+.search_bar form fieldset {
+	border-radius:10px ;
+	border-width: 2px;
+	border-color:gray;
+	width: 90%;
+	align-content: center;
+}
+.search_bar{
+	color: gray;
+	margin-left: 10%;
+	margin-bottom: 20%;
+}
+.search_bar input{
+	width: 15%;
+	padding: 20px;
+	background-color: rgba(0,0,0,0.1);
+	border-radius: 10px;
+}
+.search_bar input:hover{
+	background-color: rgba(0,0,0,0.4);
+}
+button.search_bar {
+	border-radius: 4px;
+	background-color:rgb(0,153,204);
+	border:1px solid rgb(0,115,153) ;
+	cursor:pointer;
+	margin-right: 10px;
+	margin-left: 0px;
+	margin-top: 12px;
+	margin-bottom: 0px;
+	padding:13px 5px 13px 5px;
+	text-align: center;
+	transition: all 0.5s;
+}
+.search_bar button span{
+		cursor: pointer;
+  		display: inline-block;
+  		position: relative;
+  		transition: 0.3s;
+
+}	
+.search_bar button span:after{
+	content:'\2192';
+	position: absolute;
+	right: -20px;
+	transition: 0.3s;
+	opacity: 0;
+}
+.search_bar button:hover span:after{
+	opacity: 1;
+	right: 0;
+}
+div.footer{
+background-color: black;
+display: block;
+
+}
+p.address{
+text-align: left;
+color:white;
+vertical-align: center;
+font-family: 'Raleway',sans-serif;
+left: 10px;
+bottom: 30px;
+overflow:auto;
+background-color: black;
+}
+p.right_bottom{
+	background-color: black;
+	display: inline-block;
+	align-content: right;
+}
+div.right_bottom img{
+	width: 30px;
+	height: 30px;
+	border:0;
+	margin:5px;
+}
+div.bottom{
+	position: fixed;
+	bottom: 2px;
+	background-color: black;
+	color: white;
+	font-size: 8px;
+	font-family: monospace;
+	text-align: center;
+	width: 100%;
+}
