@@ -1,4 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Amatic+SC:400,700|Raleway|PT+Sans');
+@keyframes anim1{
+	0%{background-color: rgba(255,255,255,0.5);}
+	25%{background-color: rgba(255,255,255,1);}
+	50%{background-color: rgba(255,255,255,0.5);}
+	100%{background-color: rgba(255,255,255,0);}
+}
 body{
 	background-image:url("back.jpg");
 	background-repeat: repeat-x;;
@@ -151,4 +157,65 @@ div.bottom{
 	font-family: monospace;
 	text-align: center;
 	width: 100%;
+}
+div.form_main{
+	vertical-align: center;
+	align-content: center;
+	text-align: center;
+	margin-left: 10%;
+	margin-right: 10%;
+	display: block;
+	overflow: auto;
+	box-shadow: 5px 10px rgba(255,255,255,0.5);
+	border-radius: 20px;
+	padding:5px;
+	font-family: sans-serif;
+	text-decoration: none;
+	font-style: bold;
+}
+.form_main form fieldset legend{
+	text-align: left;
+	color: navy;
+	font-weight: normal;
+	font-size: 1.13em;
+	
+}
+
+.form_main form fieldset legend:hover{
+	animation-name:anim1;
+	animation-duration: 0.8s;
+
+}
+.form_main input{
+	max-width: 60%;
+	width: auto;
+	padding:10px;
+	background-color: rgba(255,255,255,0.5);
+	margin-top: 10px;
+	margin-bottom: 10px;
+	cursor: pointer;
+	border-radius: 7px;
+}
+.form_main input:hover{
+	background-color: rgba(255,255,255,0.9 );
+}
+.form_main input:focus{
+	width:40%;
+}
+.form_main textarea{
+
+}
+button.form_main {
+	width: 40%;
+	align-self: center;
+	background-color: rgb(73,127,83);
+	color: white;
+	padding: 14px 20px;
+	margin-top: 40px;
+	margin-left: 50%;
+	border-radius: 5px;
+	cursor: pointer;
+}
+button.form_main:hover{
+	background-color: #45a049;
 }
