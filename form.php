@@ -1,4 +1,21 @@
 
+<?php
+$dbHost = 'localhost';
+$dbUser = 'root';
+$dbPass = '';
+$dbName = 'csv_db';
+
+$dbConn = mysqli_connect ($dbHost, $dbUser, $dbPass) or die ('mysqli connect failed. ' . mysqli_error());
+mysqli_select_db($dbConn, $dbName) or die('Cannot select database. ' . mysqli_error());
+
+$sql = mysqli_query($dbConn, "SELECT * FROM tbl_name");
+echo '<datalist id="source">';
+    while ($row = mysqli_fetch_array($sql)) {
+    echo "<option value='". $row['city_id']. "'>" . $row['city_name'] ."</option>";
+    }
+echo '</datalist>';
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,7 +38,7 @@
 </div>
 <div class="main">
 	<h1>Offer Companionship:</h1></div>
-<div class="form_main"><form method="POST">
+<div class="form_main"><form method="POST" name="dbdata" onsubmit="return Check_Form()">
 	<fieldset><legend>Personal Details</legend>
 			Name:<input type="text" name="name" placeholder="Your full name" class="form_main"><br>
 			Enrollment number:<input type="number" name="enroll_no" placeholder="Enrollment No.  here" min="130000" max="180000" class="form_main"><br>
@@ -38,6 +55,9 @@
 			</fieldset>
 </div>
 <button type="button" class="form_main">Submit
+	<!--<input type="submit" name="Submit">
+	Alternate code if this doesnt work
+-->
 </button>
 </form>
 </div>
@@ -56,7 +76,34 @@
 		<a href="https://twitter.com/sdslabs"><img src="twitter.png"></a>
 	</p></div>
 	<div class="bottom">&#169;SDSlabs 2018 </div>
+<?php
+$dbHost = 'localhost';
+$dbUser = 'root';
+$dbPass = '';
+$dbName = 'woc';
 
+$dbConn = mysqli_connect ($dbHost, $dbUser, $dbPass) or die ('mysqli connect failed. ' . mysqli_error());
+mysqli_select_db($dbConn, $dbName) or die('Cannot select database. ' . mysqli_error());
+$name = mysqli_real_escape_string($dbConn, $_POST['name']);
+$enroll_no = mysqli_real_escape_string($dbConn, $_POST['enroll_no']);
+$phone_no = mysqli_real_escape_string($dbConn, $_POST['phone_no']);
+$consent = mysqli_real_escape_string($dbConn, $_POST['consent']);
+$source = mysqli_real_escape_string($dbConn, $_POST['source']);
+$destination = mysqli_real_escape_string($dbConn, $_POST['destination']);
+$dated = mysqli_real_escape_string($dbConn, $_POST['dated']);
+$PNR = mysqli_real_escape_string($dbConn, $_POST['PNR']);
+$no_people = mysqli_real_escape_string($dbConn, $_POST['$no_people']);
+$comments = mysqli_real_escape_string($dbConn, $_POST['comments']);
+$sql = "INSERT INTO datawoc (name, enroll_no, phone_no, phone_no, source, destination, dated, PNR, no_people, comments) VALUES ('$name', '$enroll_no', '$phone_no', '$consent', '$source', '$destination', '$dated', '$PNR', '$no_people', '$comments')";
+    if(mysqli_query($link, $sql)){
+        echo "Data added successfully. ";
+    } else{
+        echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
+    }
+
+
+    mysqli_close($link);
+?>
 </body>
 <!--Credits and sources
 	1.LOGO - https://studio.tailorbrands.com/
