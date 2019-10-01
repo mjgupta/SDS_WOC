@@ -1,5 +1,5 @@
 // Javascript simple form validation
-
+// function to validate
 function Validate() {
 	var x=document.forms["search_bar"]["source"].value;
 	if(x==""){
